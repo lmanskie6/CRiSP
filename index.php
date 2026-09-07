@@ -23,11 +23,11 @@
                         <li><a href="#home">HOME</a></li>
                         <li><a href="#services">SERVICES</a></li>
                         <li><a href="#rates">RATES</a></li>
-                        <li><a href="#about">ABOUT US</a></li>
                         <li><a href="#process">PROCESS</a></li>
+                        <li><a href="#about">ABOUT US</a></li>
                         <li><a href="#footer">CONTACT</a></li>
                     </ul>
-                    <a href="#" class="btn btn-outline">BOOK A PICKUP</a>
+                    <a href="login/login.php" class="btn btn-outline">BOOK A PICKUP</a>
                 </nav>
             </div>
         </header>
@@ -43,7 +43,7 @@
                         the hassle.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary">BOOK A PICKUP</a>
+                        <a href="login/login.php" class="btn btn-primary">BOOK A PICKUP</a>
                         <a href="#services" class="btn btn-secondary">VIEW SERVICES</a>
                     </div>
                 </div>
@@ -145,25 +145,6 @@
             </div>
         </section>
 
-<!-- ABOUT US PAGE -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="about-card">
-                    <h2 class="about-title">ABOUT US</h2>
-                    <div class="about-grid">
-                        <div class="about-text">
-                            <p>
-                                At CRISP Steam n° Press, we specialize in high-grade steam and press finishing designed to keep your wardrobe looking effortlessly sharp and polished. We provide dedicated thermal care that eliminates deep wrinkles, restores crisp creases, and preserves natural fabric structures without the harsh heat damage of traditional household irons. From daily workwear and structured formal suits, to delicate fine fabrics and household textiles, our precision service delivers a clean, hotel-grade finish so you always step out looking your best.
-                            </p>
-                            <p>
-                                Driven by a commitment to garment longevity and modern convenience, we take the hassle out of fabric maintenance. Simply bring us your pre-cleaned items, and our team will handle the rest using tailored, temperature-controlled steam processes. Whether you need a single outfit refreshed for a last-minute event or your entire weekly rotation pressed and ready to wear, CRISP ensures premium quality and reliable turnaround every time.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
 <!-- PROCESS PAGE -->
         <section class="process" id="process">
             <div class="container">
@@ -196,6 +177,26 @@
                         <p>
                             <strong>Disclaimer:</strong> We provide dedicated pressing and finishing services only. Please ensure all garments are pre-cleaned before pickup. We are not liable for pre-existing stains, fabric wear, or damage from undisclosed delicate materials.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<!-- ABOUT US PAGE -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-card">
+                    <h2 class="about-title">ABOUT US</h2>
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <p>
+                                At CRISP Steam n° Press, we specialize in high-grade steam and press finishing designed to keep your wardrobe looking effortlessly sharp and polished. We provide dedicated thermal care that eliminates deep wrinkles, restores crisp creases, and preserves natural fabric structures without the harsh heat damage of traditional household irons. From daily workwear and structured formal suits, to delicate fine fabrics and household textiles, our precision service delivers a clean, hotel-grade finish so you always step out looking your best.
+                            </p>
+                            <p>
+                                Driven by a commitment to garment longevity and modern convenience, we take the hassle out of fabric maintenance. Simply bring us your pre-cleaned items, and our team will handle the rest using tailored, temperature-controlled steam processes. Whether you need a single outfit refreshed for a last-minute event or your entire weekly rotation pressed and ready to wear, CRISP ensures premium quality and reliable turnaround every time.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
