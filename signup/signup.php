@@ -7,7 +7,7 @@ $success = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
-    $full_name = $_POST['fullname'];
+    $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
@@ -36,11 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                 
                 $stmt = $pdo->prepare("
-                    INSERT INTO users (username, full_name, email, password_hash, role, created_at) 
+                    INSERT INTO users (username, name, email, password_hash, role, created_at) 
                     VALUES (?, ?, ?, ?, 'customer', NOW())
                 ");
                 
-                if ($stmt->execute([$username, $full_name, $email, $hashed_password])) {
+                if ($stmt->execute([$username, $name, $email, $hashed_password])) {
                     $success = "Registration successful! You can now log in.";
                 } else {
                     $error = "Registration failed. Please try again.";
@@ -71,14 +71,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <img src="../images/logo.svg" alt="CRiSP">
                     </a>
                 </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="../index.php#home">HOME</a></li>
+                        <li><a href="../index.php#services">SERVICES</a></li>
+                        <li><a href="../index.php#rates">RATES</a></li>
+                        <li><a href="../index.php#process">PROCESS</a></li>
+                        <li><a href="../index.php#about">ABOUT US</a></li>
+                        <li><a href="../index.php#footer">CONTACT</a></li>
+                    </ul>
+                    <a href="../login/login.php" class="btn btn-outline">BOOK A PICKUP</a>
+                </nav>
             </div>
         </header>
 
         <section class="login-section signup-section">
             <div class="container">
                 <div class="login-card signup-card">
-                    <h2 class="login-title">SIGN UP</h2>
-                    <p class="login-message">Create your account to start booking.</p>
+                    <h2 class="login-title">NEW TO CRiSP?</h2>
+                    <p class="login-message">Create an account to start booking.</p>
                     
                     <?php if ($error): ?>
                         <div class="login-error"><?php echo htmlspecialchars($error); ?></div>
@@ -94,8 +105,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <input type="text" id="username" name="username" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>" required>
                         </div>
                         <div class="form-group">
-                            <label for="fullname">Full Name</label>
-                            <input type="text" id="fullname" name="fullname" value="<?php echo isset($_POST['fullname']) ? htmlspecialchars($_POST['fullname']) : ''; ?>" required>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
@@ -115,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         Already have an account? <a href="../login/login.php">Log in here</a>
                     </p>
                     <p class="login-footer">
-                        <a href="../index.php">← Back to Home</a>
+                        <a href="../index.php">Back to the Home Page</a>
                     </p>
                 </div>
             </div>

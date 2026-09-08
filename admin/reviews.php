@@ -3,7 +3,7 @@ $pdo = getConnection();
 
 $stmt = $pdo->query("
     SELECT r.review_id, r.user_id, r.rating, r.comment, r.status, r.created_at,
-           u.full_name, u.username
+           u.name, u.username
     FROM reviews r
     JOIN users u ON r.user_id = u.user_id
     ORDER BY r.created_at DESC

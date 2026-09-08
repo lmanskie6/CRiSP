@@ -1,6 +1,6 @@
 <?php
 $pdo = getConnection();
-$stmt = $pdo->query("SELECT user_id, username, full_name, email, role, is_active, created_at, last_login 
+$stmt = $pdo->query("SELECT user_id, username, name, email, role, is_active, created_at, last_login 
                      FROM users 
                      WHERE role = 'customer' 
                      ORDER BY created_at DESC");
@@ -17,7 +17,7 @@ $customers = $stmt->fetchAll();
                 <tr>
                     <th>ID</th>
                     <th>Username</th>
-                    <th>Full Name</th>
+                    <th>Name</th>
                     <th>Email</th>
                     <th>Status</th>
                     <th>Joined</th>
@@ -30,7 +30,7 @@ $customers = $stmt->fetchAll();
                     <tr>
                         <td><?php echo $customer['user_id']; ?></td>
                         <td><strong><?php echo htmlspecialchars($customer['username']); ?></strong></td>
-                        <td><?php echo htmlspecialchars($customer['full_name']); ?></td>
+                        <td><?php echo htmlspecialchars($customer['name']); ?></td>
                         <td><?php echo htmlspecialchars($customer['email']); ?></td>
                         <td><span class="badge badge-<?php echo $customer['is_active'] ? 'active' : 'inactive'; ?>"><?php echo $customer['is_active'] ? 'Active' : 'Inactive'; ?></span></td>
                         <td><?php echo date('M d, Y', strtotime($customer['created_at'])); ?></td>

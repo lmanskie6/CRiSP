@@ -21,7 +21,7 @@ $recent_bookings = $stmt->fetchAll();
 
 // Recent reviews
 $stmt = $pdo->query("
-    SELECT r.rating, r.comment, r.created_at, u.full_name 
+    SELECT r.rating, r.comment, r.created_at, u.name 
     FROM reviews r 
     JOIN users u ON r.user_id = u.user_id 
     ORDER BY r.created_at DESC 

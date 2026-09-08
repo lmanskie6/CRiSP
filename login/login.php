@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($user) {
         if (password_verify($password, $user['password_hash'])) {
             $_SESSION['user_id'] = $user['user_id'];
-            $_SESSION['user_name'] = $user['full_name'];
+            $_SESSION['user_name'] = $user['name'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
             
@@ -59,14 +59,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <img src="../images/logo.svg" alt="CRiSP">
                     </a>
                 </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="../index.php#home">HOME</a></li>
+                        <li><a href="../index.php#services">SERVICES</a></li>
+                        <li><a href="../index.php#rates">RATES</a></li>
+                        <li><a href="../index.php#process">PROCESS</a></li>
+                        <li><a href="../index.php#about">ABOUT US</a></li>
+                        <li><a href="../index.php#footer">CONTACT</a></li>
+                    </ul>
+                    <a href="../login/login.php" class="btn btn-outline">BOOK A PICKUP</a>
+                </nav>
             </div>
         </header>
 
         <section class="login-section">
             <div class="container">
                 <div class="login-card">
-                    <h2 class="login-title">LOGIN</h2>
-                    <p class="login-message">Log in to book a pickup.</p>
+                    <h2 class="login-title">WELCOME BACK!</h2>
+                    <p class="login-message">Please log in to continue.</p>
                     
                     <?php if ($error): ?>
                         <div class="login-error"><?php echo htmlspecialchars($error); ?></div>
@@ -87,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         Don't have an account? <a href="../signup/signup.php">Sign up here</a>
                     </p>
                     <p class="login-footer">
-                        <a href="../index.php">← Back to Home</a>
+                        <a href="../index.php">Back to the Home Page</a>
                     </p>
                 </div>
             </div>
