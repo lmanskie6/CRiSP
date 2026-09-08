@@ -181,7 +181,7 @@ body {
 .hero {
   height: 900px;
   background-color: var(--primary-navyblue);
-  background-image: url("images/hero bg.png");
+  background-image: url("../images/hero bg.png");
   background-size: cover;
   background-position: center 10px;
   background-repeat: no-repeat;
@@ -366,7 +366,7 @@ body {
 .rates {
   height: 900px;
   background-color: var(--primary-navyblue);
-  background-image: url("images/rates bg.png");
+  background-image: url("../images/rates bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: normal;
@@ -430,7 +430,7 @@ body {
   background-color: var(--primary-cream);
   background-image:
     linear-gradient(rgba(245, 243, 233, 0.4), rgba(245, 243, 233, 0.4)),
-    url("images/tee.jpg");
+    url("../images/tee.jpg");
   background-position: center top -10px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -441,7 +441,7 @@ body {
   background-color: var(--primary-cream);
   background-image:
     linear-gradient(rgba(245, 243, 233, 0.4), rgba(245, 243, 233, 0.4)),
-    url("images/tux.jpg");
+    url("../images/tux.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -452,7 +452,7 @@ body {
   background-color: var(--primary-cream);
   background-image:
     linear-gradient(rgba(245, 243, 233, 0.4), rgba(245, 243, 233, 0.4)),
-    url("images/silk.jpg");
+    url("../images/silk.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -463,7 +463,7 @@ body {
   background-color: var(--primary-cream);
   background-image:
     linear-gradient(rgba(245, 243, 233, 0.4), rgba(245, 243, 233, 0.4)),
-    url("images/linen.jpg");
+    url("../images/linen.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -641,7 +641,7 @@ body {
 
 .about-card {
   background-color: var(--primary-navyblue);
-  background-image: url("images/about bg.png");
+  background-image: url("../images/about bg.png");
   background-size: 100%;
   background-repeat: no-repeat;
   border-radius: 80px;

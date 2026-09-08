@@ -1,3 +1,56 @@
+<?php
+require_once '../validation.php';  
+require_once '../database/config.php';
+
+$error = '';
+$success = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $full_name = $_POST['fullname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+    
+    if ($password !== $confirm_password) {
+        $error = "Passwords do not match";
+    } else {
+        $pdo = getConnection();
+        
+        // Check if username exists
+        $stmt = $pdo->prepare("SELECT user_id FROM users WHERE username = ?");
+        $stmt->execute([$username]);
+        $existing_username = $stmt->fetch();
+        
+        if ($existing_username) {
+            $error = "Username already taken. Please choose another.";
+        } else {
+            // Check if email exists
+            $stmt = $pdo->prepare("SELECT user_id FROM users WHERE email = ?");
+            $stmt->execute([$email]);
+            $existing_email = $stmt->fetch();
+            
+            if ($existing_email) {
+                $error = "Email already registered. Please use another email.";
+            } else {
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+                
+                $stmt = $pdo->prepare("
+                    INSERT INTO users (username, full_name, email, password_hash, role, created_at) 
+                    VALUES (?, ?, ?, ?, 'customer', NOW())
+                ");
+                
+                if ($stmt->execute([$username, $full_name, $email, $hashed_password])) {
+                    $success = "Registration successful! You can now log in.";
+                } else {
+                    $error = "Registration failed. Please try again.";
+                }
+            }
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +60,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..800&family=Poppins:wght@400;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="page-wrapper">
         <header class="header">
             <div class="container">
                 <div class="logo">
@@ -26,14 +79,27 @@
                 <div class="login-card signup-card">
                     <h2 class="login-title">SIGN UP</h2>
                     <p class="login-message">Create your account to start booking.</p>
-                    <form action="#" method="post" class="login-form">
+                    
+                    <?php if ($error): ?>
+                        <div class="login-error"><?php echo htmlspecialchars($error); ?></div>
+                    <?php endif; ?>
+                    
+                    <?php if ($success): ?>
+                        <div class="login-success"><?php echo htmlspecialchars($success); ?></div>
+                    <?php endif; ?>
+
+                    <form action="" method="post" class="login-form">
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" id="username" name="username" required>
+                            <input type="text" id="username" name="username" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" value="<?php echo isset($_POST['fullname']) ? htmlspecialchars($_POST['fullname']) : ''; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
