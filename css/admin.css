@@ -1,6 +1,3 @@
-/* Admin Dashboard - CRiSP
-   Color Palette: Navy Blue (#1b3c6b) + Cream (#f5f3e9) */
-
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +27,6 @@ body {
     margin: 0;
 }
 
-/* Admin Header */
 .admin-header {
     background: var(--primary-cream);
     height: 111px;
@@ -103,7 +99,6 @@ body {
     box-shadow: 0 6px 20px rgba(27, 60, 107, 0.35);
 }
 
-/* Admin Body */
 .admin-body {
     display: flex;
     margin-top: 111px;
@@ -111,7 +106,6 @@ body {
     background: var(--white);
 }
 
-/* Sidebar */
 .admin-sidebar {
     width: 260px;
     background: var(--primary-navy);
@@ -162,7 +156,6 @@ body {
     padding-left: 16px;
 }
 
-/* Main Content */
 .admin-content {
     flex: 1;
     padding: 35px 45px;
@@ -183,7 +176,6 @@ body {
     margin: 0;
 }
 
-/* Stats Cards */
 .admin-stats {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -223,7 +215,6 @@ body {
     margin: 6px 0 0 0;
 }
 
-/* Table Wrapper */
 .admin-table-wrapper {
     background: var(--white);
     border-radius: var(--radius);
@@ -297,7 +288,6 @@ body {
     background: var(--primary-navy-light);
 }
 
-/* Table Styles */
 .admin-table {
     width: 100%;
     border-collapse: collapse;
@@ -338,15 +328,10 @@ body {
     border-bottom: 2px solid rgba(27, 60, 107, 0.1);
 }
 
-.admin-table tbody tr:hover td {
-    background: var(--primary-cream);
-}
-
 .admin-table tbody tr:last-child td {
     border-bottom: none;
 }
 
-/* Badges */
 .badge {
     display: inline-block;
     padding: 4px 16px;
@@ -396,7 +381,6 @@ body {
     color: #c62828;
 }
 
-/* Action Buttons */
 .btn-action {
     color: var(--primary-navy);
     text-decoration: none;
@@ -424,7 +408,6 @@ body {
     color: #b71c1c;
 }
 
-/* Reviews Specific */
 .reviews-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -474,7 +457,6 @@ body {
     color: #ddd;
 }
 
-/* Grid for Recent Tables */
 .admin-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -489,4 +471,277 @@ body {
 .text-muted {
     color: var(--gray);
     font-size: 15px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-content h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin-bottom: 20px;
+}
+
+.modal-content .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-content .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+
+.modal-content .form-group input,
+.modal-content .form-group select,
+.modal-content .form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content .form-group input:focus,
+.modal-content .form-group select:focus,
+.modal-content .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-navy);
+}
+
+.modal-content .form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.modal-actions .btn-save {
+    padding: 10px 30px;
+    background: var(--primary-navy);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.modal-actions .btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(27, 60, 107, 0.3);
+}
+
+.modal-actions .btn-cancel {
+    padding: 10px 30px;
+    background: #ddd;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.modal-actions .btn-cancel:hover {
+    background: #ccc;
+}
+
+/* Delete modal */
+.delete-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-modal.active {
+    display: flex;
+}
+
+.delete-modal-content {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 35px 40px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: scale(0.9) translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.delete-modal-content h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--primary-navy);
+    margin-bottom: 8px;
+}
+
+.delete-modal-content p {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+.delete-modal-content .item-name {
+    font-weight: 600;
+    color: var(--black);
+}
+
+.delete-modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-delete-confirm {
+    padding: 12px 30px;
+    background: #c62828;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-delete-confirm:hover {
+    background: #b71c1c;
+    transform: scale(1.02);
+}
+
+.btn-delete-cancel {
+    padding: 12px 30px;
+    background: #ddd;
+    color: var(--black);
+    border: none;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-delete-cancel:hover {
+    background: #ccc;
+}
+/* Booking details modal */
+.booking-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+}
+
+.booking-modal.active {
+    display: flex;
+}
+
+.booking-modal-content {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px 40px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+.booking-modal-content h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--primary-navy);
+    margin-bottom: 20px;
+}
+
+.booking-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--gray);
+    transition: color 0.3s ease;
+}
+
+.booking-modal-close:hover {
+    color: var(--black);
+}
+
+.booking-details .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-light);
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+}
+
+.booking-details .detail-row:last-child {
+    border-bottom: none;
+}
+
+.booking-details .detail-row strong {
+    color: var(--primary-navy);
 }
