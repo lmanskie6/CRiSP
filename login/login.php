@@ -104,14 +104,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </section>
     </div>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const wrapper = document.querySelector('.page-wrapper');
-        wrapper.addEventListener('animationend', function() {
-            wrapper.style.animation = 'none';
-        });
-    });
-    </script>
 </body>
 </html>
