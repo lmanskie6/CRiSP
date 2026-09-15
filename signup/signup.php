@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div id="app">
         <header class="header">
             <div class="container">
-                <div class="logo"><a href="../homepage/index.php"><img src="../assets/logo.svg" alt="CRiSP"></a></div>
+                <div class="logo"><a href="../homepage/index.php"><img src="../assets/images/logo.svg" alt="CRiSP"></a></div>
                 <nav class="nav">
                     <ul>
                         <li><a href="../homepage/index.php#home">HOME</a></li>
