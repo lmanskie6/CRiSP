@@ -174,7 +174,7 @@ body {
 .hero {
     height: 900px;
     background-color: var(--primary-navyblue);
-    background-image: url("../assets/hero bg.png");
+    background-image: url("../assets/images/hero bg.png");
     background-size: cover;
     background-position: center 10px;
     background-repeat: no-repeat;
@@ -355,7 +355,7 @@ body {
 .rates {
     height: 900px;
     background-color: var(--primary-navyblue);
-    background-image: url("../assets/rates bg.png");
+    background-image: url("../assets/images/rates bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     align-items: center;
@@ -416,7 +416,7 @@ body {
 
 .rate-card-daily {
     background-color: var(--primary-cream);
-    background-image: url("../assets/tee.png");
+    background-image: url("../assets/images/tee.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -425,7 +425,7 @@ body {
 
 .rate-card-formal {
     background-color: var(--primary-cream);
-    background-image: url("../assets/tux.png");
+    background-image: url("../assets/images/tux.png");
     background-position: center top 9;
     background-repeat: no-repeat;
     background-size: cover;
@@ -434,7 +434,7 @@ body {
 
 .rate-card-delicates {
     background-color: var(--primary-cream);
-    background-image: url("../assets/silk.png");
+    background-image: url("../assets/images/silk.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -443,7 +443,7 @@ body {
 
 .rate-card-household {
     background-color: var(--primary-cream);
-    background-image: url("../assets/linen.png");
+    background-image: url("../assets/images/linen.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -619,7 +619,7 @@ body {
 
 .about-card {
     background-color: var(--primary-navyblue);
-    background-image: url("../assets/about bg.png");
+    background-image: url("../assets/images/about bg.png");
     background-size: 100%;
     background-repeat: no-repeat;
     border-radius: 80px;
@@ -878,13 +878,13 @@ body {
     font-size: 18px;
     color: var(--primary-cream);
     text-decoration: none;
-    display: inline-block;          /* required for transform to work on inline elements */
-    transform-origin: left center;  /* grow toward the right */
+    display: inline-block; 
+    transform-origin: left center;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .footer-links li a:hover {
-    transform: scale(1.22);         /* ~equivalent to 18px → 22px */
+    transform: scale(1.22);
     color: var(--primary-cream);
 }
 
@@ -1103,7 +1103,7 @@ body {
 }
 
 .testimonials-carousel {
-    overflow: hidden;              /* clip off-screen cards */
+    overflow: hidden;
     position: relative;
     padding: 10px 0;
 }
@@ -1116,7 +1116,7 @@ body {
 }
 
 .testimonials-carousel .testimonial-card {
-    display: flex;                 /* NOTE: no longer display:none */
+    display: flex;   
     flex-shrink: 0;
     width: 416px;
     height: 480px;

@@ -87,7 +87,7 @@ $rates = $stmt->fetchAll();
                         <a href="#services" class="btn btn-secondary">VIEW SERVICES</a>
                     </div>
                 </div>
-                <div class="hero-image"><figure><img src="../assets/clothes.png" alt="Garment care"></figure></div>
+                <div class="hero-image"><figure><img src="../assets/images/clothes.png" alt="Garment care"></figure></div>
             </div>
         </section>
 
@@ -220,8 +220,8 @@ $rates = $stmt->fetchAll();
                         <?php $loopIndex++; ?>
                     <?php endforeach; ?>
 
-                </div><!-- /.testimonials-track -->
-            </div><!-- /.testimonials-carousel -->
+                </div>
+            </div>
 
             <button class="carousel-arrow carousel-arrow-prev" id="prevTestimonial" aria-label="Previous review">&#10094;</button>
             <button class="carousel-arrow carousel-arrow-next" id="nextTestimonial" aria-label="Next review">&#10095;</button>
@@ -234,7 +234,7 @@ $rates = $stmt->fetchAll();
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-column footer-column-left">
-                        <img src="../assets/logo white.svg" alt="CRiSP" class="footer-logo-icon">
+                        <img src="../assets/images/logo white.svg" alt="CRiSP" class="footer-logo-icon">
                         <div class="footer-contact-cluster">
                             <p class="footer-contact-item"><img src="../assets/icons/mail.svg" alt="Email" class="footer-icon"> crisp.snp@gmail.com</p>
                             <p class="footer-contact-item"><img src="../assets/icons/phone.svg" alt="Phone" class="footer-icon"> +63 993 270 8291</p>
